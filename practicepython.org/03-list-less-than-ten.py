@@ -7,7 +7,7 @@
 # url: https://www.practicepython.org/exercise/2014/02/15/03-list-less-than-ten.html
 # time complexity: O(n), with n being the amount of numbers in the input string
 
-def less_than_5(lst):
+def less_than_num(lst):
 	"""
 	Take a list, say for example this one:
 
@@ -18,11 +18,13 @@ def less_than_5(lst):
 
 	Instead of printing the elements one by one, make a new list that has all the elements less than 5 from this list in it and print out this new list.
 	Write this in one line of Python.
+	Ask the user for a number and return a list that contains only elements from the original list a that are smaller than that number given by the user.
 	"""
 
-  return [x for x in lst if x < 5]
-    
+  return [x for x in lst if x < int(num)]
+
 a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 num = input("Choose a number: ")
-print(less_than_5(a))
+print(less_than_num(a))
+
 
