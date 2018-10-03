@@ -17,14 +17,12 @@ def less_than_5(lst):
 	Extras:
 
 	Instead of printing the elements one by one, make a new list that has all the elements less than 5 from this list in it and print out this new list.
+	Write this in one line of Python.
 	"""
 
-  ls = []
-  for i in lst:
-    if i < 5:
-      ls.append(i)
-  print(ls)
+  return [x for x in lst if x < 5]
     
 a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-less_than_5(a)
+num = input("Choose a number: ")
+print(less_than_5(a))
 
