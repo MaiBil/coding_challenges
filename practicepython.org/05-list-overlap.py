@@ -10,6 +10,8 @@ program works on two lists of different sizes.
 Extras:
 
 1. Randomly generate two lists to test this
+2. Write this in one line of Python (don’t worry if you can’t figure
+this out at this point - we’ll get to it soon)
 """
 
 import random
@@ -24,13 +26,9 @@ def common_list(list1, list2):
 
 
 def random_list():
-    n = random.randint(1,50)
-    ls = []
-    for i in range(n):
-      ls.append(random.randint(1,100))
-    return ls
+    return [random.randint(1, 100) for x in range(random.randint(1, 50))]
 
 
 a = random_list()
 b = random_list()
-print(common_list(a,b))
+print(common_list(a, b))
