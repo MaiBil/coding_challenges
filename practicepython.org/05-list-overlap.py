@@ -31,4 +31,6 @@ def random_list():
 
 a = random_list()
 b = random_list()
-print(common_list(a, b))
+
+if __name__ == '__main__':
+    print(common_list(a, b))
