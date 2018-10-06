@@ -7,38 +7,81 @@
 # url: https://www.practicepython.org/exercise/2014/02/05/02-odd-or-even.html
 # time complexity: O(n), with n being the amount of numbers in the input string
 
-def parity(num):
-  """
-  Ask the user for a number. Depending on whether the number is even or odd, print out an appropriate message to the user. Hint: how does an even / odd number react differently when divided by 2?
+"""
+Ask the user for a number. Depending on whether the number is even or odd,
+print out an appropriate message to the user. Hint: how does an even / odd
+number react differently when divided by 2?
 
-  Extras:
+Extras:
 
-  1. If the number is a multiple of 4, print out a different message.
-  """
+1. If the number is a multiple of 4, print out a different message.
+Extras:
 
-  if int(numb) % 4 == 0:
-    print ("Your number is a multiple of 4.")
-  elif int(numb) % 2 == 0:
-    print ("The number you chose is even.")
-  else:
-    print ("The number you chose is odd.")
+2. Ask the user for two numbers: one number to check (call it num) and one
+number to divide by (check). If check divides evenly into num, tell that to
+the user. If not, print a different appropriate message.
+"""
 
-numb = input("Choose a number: ")
-parity(numb)
 
-print ()
-def checking(num,check):
-  """
-  Extras:
+def parity(numb):
+    """
+    :param nmultiply: One integer, asked to the user
+    :type multiply: int
+    :return: String printed with message about the parity of the number asked
+    :rtype: string
+    """
 
-  2. Ask the user for two numbers: one number to check (call it num) and one number to divide by (check). If check divides evenly into num, tell that to the user. If not, print a different appropriate message.
-  """
-  
-  if int(check) % int(num) == 0:
-    print("Check divides evenly into num.")
-  else:
-    print("Check does not divide evenly into num.")
+    if numb % 4 == 0:
+        print("Your number is a multiple of 4.")
+    elif numb % 2 == 0:
+        print("The number you chose is even.")
+    else:
+        print("The number you chose is odd.")
 
-num = input("Now choose a number, we'll call it 'num': ")
-check = input("Choose another number, we'll call it 'check': ")
-checking(num,check)
+
+def is_evenly_diveded(dividend, divider):
+    """
+    :param nmultiply: Two integers, asked to the user
+    :type multiply: int, int
+    :return: String printed with message saying if the divider divides evenly
+    into the dividend or not
+    :rtype: string
+    """
+
+    if dividend % divider == 0:
+        print("Divider divides evenly into dividend.")
+    else:
+        print("Divider does not divide evenly into dividend.")
+
+
+parsed = False
+while not parsed:
+    try:
+        numb = int(input("Choose a number: "))
+        parsed = True
+    except ValueError:
+        print('Invalid value!')
+
+if __name__ == '__main__':
+    parity(numb)
+
+print()
+
+parsed = False
+while not parsed:
+    try:
+        dividend = int(input("Now choose a number, we'll call it 'Dividend': "))
+        parsed = True
+    except ValueError:
+        print('Invalid value!')
+
+parsed = False
+while not parsed:
+    try:
+        divider = int(input("Choose another number, we'll call it 'Divider: "))
+        parsed = True
+    except ValueError:
+        print('Invalid value!')
+
+if __name__ == '__main__':
+    is_evenly_diveded(dividend, divider)
