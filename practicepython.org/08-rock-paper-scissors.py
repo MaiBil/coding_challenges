@@ -33,20 +33,24 @@ def rock_paper_scissors():
     play_again = "Y"
     while play_again != "n":
         user_choice = (input("Choose rock, paper or scissors: ")).lower()
-        computer = random.choice(["rock", "paper", "scissors"])
-        print("Computer chose %s" % computer)
-        if user_choice == computer:
-            print("It's a tie!")
-        elif (user_choice == "rock" and computer == "scissors"):
-            print("You win!")
-        elif (user_choice == "scissors" and computer == "paper"):
-            print("You win!")
-        elif (user_choice == "paper" and computer == "rock"):
-            print("You win!")
+        if user_choice == "rock" or user_choice == "paper" or user_choice == "scissors":
+            computer = random.choice(["rock", "paper", "scissors"])
+            print("Computer chose %s" % computer)
+            if user_choice == computer:
+                print("It's a tie!")
+            elif (user_choice == "rock" and computer == "scissors"):
+                print("You win!")
+            elif (user_choice == "scissors" and computer == "paper"):
+                print("You win!")
+            elif (user_choice == "paper" and computer == "rock"):
+                print("You win!")
+            else:
+                print("You lose")
+            print()
+            play_again = (input("Do you want to play again? (Y/N): ")).lower()
         else:
-            print("You lose")
-        print()
-        play_again = (input("Do you want to play again? (Y/N): ")).lower()
+            print("Not a valid option! Please try again")
+            print()
 
 
 if __name__ == '__main__':
