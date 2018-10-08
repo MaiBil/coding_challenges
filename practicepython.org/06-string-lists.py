@@ -19,19 +19,14 @@ def palindrome_or_not(string):
     :return: Print a message saying if the string is a palindrome or not
     :rtype: string
     """
-    string_lower = string.lower()
-    string_reverse = ""
-    i = len(string) - 1
-    while i >= 0:
-        string_reverse += string_lower[i]
-        i -= 1
-    if string_lower == string_reverse:
+    string_reverse = string[::-1]
+    if string == string_reverse:
         print("Your string is a palindrome!")
     else:
         print("Your string is not a palindrome.")
 
 
-string = input("Please write a string: ")
+string = (input("Please write a string: ")).lower()
 
 if __name__ == '__main__':
     palindrome_or_not(string)
