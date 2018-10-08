@@ -27,4 +27,4 @@ def even_list(a):
 a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 if __name__ == '__main__':
-  print(even_list(a))
+    print(even_list(a))
