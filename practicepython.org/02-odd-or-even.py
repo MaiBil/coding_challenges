@@ -25,8 +25,8 @@ the user. If not, print a different appropriate message.
 
 def parity(numb):
     """
-    :param nmultiply: One integer, asked to the user
-    :type multiply: int
+    :param parity: One integer, asked to the user
+    :type parity: int
     :return: String printed with message about the parity of the number asked
     :rtype: string
     """
@@ -41,8 +41,8 @@ def parity(numb):
 
 def is_evenly_diveded(dividend, divider):
     """
-    :param nmultiply: Two integers, asked to the user
-    :type multiply: int, int
+    :param is_evenly_diveded: Two integers, asked to the user
+    :type is_evenly_diveded: int, int
     :return: String printed with message saying if the divider divides evenly
     into the dividend or not
     :rtype: string
@@ -54,34 +54,15 @@ def is_evenly_diveded(dividend, divider):
         print("Divider does not divide evenly into dividend.")
 
 
-parsed = False
-while not parsed:
-    try:
-        numb = int(input("Choose a number: "))
-        parsed = True
-    except ValueError:
-        print('Invalid value!')
+numb = int(input("Choose a number: "))
 
 if __name__ == '__main__':
     parity(numb)
 
 print()
 
-parsed = False
-while not parsed:
-    try:
-        dividend = int(input("Now choose a number, we'll call it 'Dividend': "))
-        parsed = True
-    except ValueError:
-        print('Invalid value!')
-
-parsed = False
-while not parsed:
-    try:
-        divider = int(input("Choose another number, we'll call it 'Divider: "))
-        parsed = True
-    except ValueError:
-        print('Invalid value!')
+dividend = int(input("Now choose a number, we'll call it 'Dividend': "))
+divider = int(input("Choose another number, we'll call it 'Divider: "))
 
 if __name__ == '__main__':
     is_evenly_diveded(dividend, divider)
